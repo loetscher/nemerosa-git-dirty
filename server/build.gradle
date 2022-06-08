@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'net.nemerosa.versioning' version '3.0.0'	
 }
 
 group = 'com.example'
@@ -19,4 +20,11 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+versioning {
+    gitRepoRootDir = '../'
+    dirtyStatusLog = true
+    dirtySuffix = ''
+    dirty = { version -> "${version}${dirtySuffix}" }
 }
