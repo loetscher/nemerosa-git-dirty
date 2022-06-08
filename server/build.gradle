@@ -23,7 +23,6 @@ tasks.named('test') {
 }
 
 versioning {
-    gitRepoRootDir = '../'
     dirtyStatusLog = true
     dirtySuffix = ''
     dirty = { version -> "${version}${dirtySuffix}" }
